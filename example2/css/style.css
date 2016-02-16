@@ -1,0 +1,16 @@
+.pan-wrapper {
+    overflow: hidden;
+    height: 600px;
+}
+
+.pan-wrapper img {
+    height: 600px;
+}
+
+.navigation {
+    margin-top: 50px;
+}
+
+.navigation a {
+    cursor: pointer;
+}
