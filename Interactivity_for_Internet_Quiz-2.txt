@@ -1,0 +1,98 @@
+
+
+Interactivity for the Internet
+Quiz 2: Javascript basics
+
+
+1) Which of these is NOT a primitive data type? List all that apply.
+    a. boolean
+    b. null
+    c. container
+    d. class
+
+	Answer: ______
+
+
+2) Which primitive data type can be described as a "data type for words and characters"
+
+    Answer: ______
+
+
+
+3) Which of these will NOT work as a variable name? List all that apply.
+    a. 45myVariable
+    b. My_variable
+    c. my_variable1
+    d. cat
+    e. _1myVariable
+
+	Answer: ______
+
+
+
+4) All unique variables require...
+    a. a number in the name
+    b. the text "myVariable"
+    c. a unique name
+
+	Answer: ______
+
+
+
+5) Functions inside objects are called...
+    a. variables
+    b. methods
+    c. null
+    d. arrays
+
+	Answer: ______
+
+
+
+6) Values that are passed into a function are called...
+    a. arguments or parameters
+    b. numbers
+    c. floats
+    d. booleans
+
+	Answer: ______
+
+
+
+7) Which one of these is an array literal notation?
+    a. new Array();
+    b. ( ) Parenthesis
+    c. new Object();
+    d. [ ] Square brackets
+
+	Answer: ______
+
+
+
+8) Which statements are TRUE? List all that apply.
+    a. a.push() is a method used to add a value at the end of an array.
+    b. a.push() is a method used to remove a value at the beginning of an array.
+    c. a.pop() is not a method of an array.
+    d. a.pop() is a method used to remove the last value of an array.
+
+	Answer: ______
+
+
+
+9) Which statements are TRUE? List all that apply.
+    a. Objects contain key/value pairs.
+    b. Object keys are also known as property names.
+    c. Objects can only contain numbers.
+    d. Objects are the same as arrays.
+
+	Answer: ______
+
+
+
+10) Which of these is an object literal notation?
+    a. { } Curly brackets
+    b. ( ) Parenthesis
+    c. new Object();
+    d. [ ] Square brackets
+
+	Answer: ______
