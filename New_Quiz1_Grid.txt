@@ -1,0 +1,24 @@
+Bootstrap Quiz
+
+1. Using Bootstrap and a template page provided for you, create this structure:
+
+    _The first row
+    a) A row with three columns.
+    b) Each column should have a width of "col-md-4"
+    c) The first column should contain the text:
+        "No one travels"
+    d) The second column contains this text, in the color red:
+        "Along this way but I,"
+    e) The third column contains this text, in the color blue:
+        "This autumn evening."
+
+    
+    _The second row
+    a) Create another row with one column
+    b) This column should have a width of "col-md-12"
+    b) Create an H1 tag containing the text
+        "- Matsuo Basho"
+    c) Add a class to the H1 tag
+    d) This class should include:
+        font-size: 18px;
+        background-color: yellow;

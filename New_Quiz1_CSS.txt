@@ -1,0 +1,16 @@
+CSS Quiz
+
+1. Using the template page provided for you, create this structure:
+
+    a) A div containing the text:
+        "No one travels"
+    b A second div containing this text, in the color red:
+        "Along this way but I,"
+    c) A third div containing this text, in the color blue:
+        "This autumn evening."
+    d) Create an H1 tag, anywhere, containing the text
+        "- Matsuo Basho"
+    e) Add a class to the H1 tag
+    f) This class should include:
+        font-size: 18px;
+        background-color: yellow;
