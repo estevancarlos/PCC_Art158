@@ -1,0 +1,31 @@
+html, body, .container {
+    height: 100%;    
+}
+
+.main {
+    padding: 100px 0px;
+}
+
+.dancing_box {
+    background-color: red;
+    height: 400px;
+    width: 400px;
+    padding: 55px;
+    margin: 0px auto;
+    transition: all 0.2s;
+}
+
+.dancing_box-inner {
+    background-color: yellow;
+    height: 200px;
+    width: 200px;
+    padding: 55px;
+    transition: all .01s;
+}
+
+.dancing_box-inner-small {
+    background-color: orange;
+    height: 90px;
+    width: 90px;
+    transition: all .01s;
+}
