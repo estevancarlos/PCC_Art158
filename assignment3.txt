@@ -1,0 +1,11 @@
+Create two Objects. The objects should contain, in any combination:
+
+1. strings
+2. Numbers
+3. At least one functions
+
+HTML should include at least one form
+
+Objectives
+1. One of the functions needs to return the value of a mathmatical calculation
+2. The form needs to replace the value of an object property.
