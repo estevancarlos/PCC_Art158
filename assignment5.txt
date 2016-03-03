@@ -1,0 +1,22 @@
+Assignment #5
+
+Using bootstrap
+- Create a page with a P5 sketch
+- This sketch needs to use concepts of speed and direction
+- It also needs to use quads and lines
+- And mouseX and mouseY
+- 10 quads
+- 10 fills for these quads
+- The coordinates for these quads need to have speed and direction
+- Write pseudocode describing what you're doing with at least one of the quads
+- mouseX and mouseY needs to have an impact on the quads (explain in pseudocode)
+
+Bonus
+- keyIsPressed
+
+Reading
+- Read #1 Vectors
+- http://natureofcode.com/book/chapter-1-vectors/
+
+- Read #2 Forces
+- http://natureofcode.com/book/chapter-2-forces/
