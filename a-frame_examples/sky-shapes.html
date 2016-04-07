@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+
+
+    <a-light color="blue" position="0 0 0"></a-light>
+    <a-light color="yellow" position="0 0 -1"></a-light>
+    <a-light color="red" position="-2 0 0"></a-light>
+
+    <a-entity position="4 0 0">
+        <a-sphere color="#6173F4" radius="0.5"></a-sphere>
+        <a-sphere color="#6173F4" radius="0.5" position="1 1 0"></a-sphere>
+        <a-sphere color="#6173F4" radius="0.5" position="-1 1 0"></a-sphere>
+        <a-sphere color="#6173F4" radius="0.5" position="0 2 0"></a-sphere>
+    </a-entity>
+
+    <a-entity position="-4 0 0">
+        <a-box color="#FA0066" depth="1" height="1" width="1" rotation="0 0 45"></a-box>
+        <a-box color="#FA0066" depth="1" height="1" width="1" rotation="0 0 45" position="1 1 0"></a-box>
+        <a-box color="#FA0066" depth="1" height="1" width="1" rotation="0 0 45" position="-1 1 0"></a-box>
+        <a-box color="#FA0066" depth="1" height="1" width="1" rotation="0 0 45" position="0 2 0"></a-box>
+    </a-entity>
+
+    <a-entity>
+        <a-cylinder color="#ffffff" radius="0.75"></a-cylinder>
+        <a-cylinder color="#ffffff" radius="0.75" position="1 1 0"></a-cylinder>
+        <a-cylinder color="#ffffff" radius="0.75" position="-1 1 0"></a-cylinder>
+        <a-cylinder color="#ffffff" radius="0.75" position="0 2 0"></a-cylinder>
+    </a-entity>
+
+
+    <a-sky color="#efefef" src="images/sky2.jpg"></a-sky>
+</a-scene>
+</body>
+</html>

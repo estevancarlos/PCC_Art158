@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <img src="images/mario.png" id="mario-image">
+        <img src="images/luigi.png" id="luigi-image">
+        <img src="images/kirby.png" id="kirby-image">
+    </a-assets>
+
+    <a-image src="#mario-image" position="-1 1 2"></a-image>
+    <a-image src="#luigi-image" position="1 1 1"></a-image>
+    <a-image src="#kirby-image" position="3 0.5 1" rotation="0 -70 0"></a-image>
+
+    <a-sky color="#efefef"></a-sky>
+</a-scene>
+</body>
+</html>
