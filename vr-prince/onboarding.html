@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Prince VR - Onboarding</title>
+    <meta name="description" content="Events — A-Frame">
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
+
+    <style>
+        body {
+            background-color: #efefef;
+        }
+    </style>
+</head>
+<body>
+
+<a-scene>
+    <a-assets>
+        <img id="prince-title" src="images/prince-title.png">
+        <img id="instruct-lookhere" src="images/instruct-1.png">
+        <img id="quote-1" src="images/quote-1.png">
+
+        <a-asset-item id="diamond" src="assets/diamond.dae"></a-asset-item>
+
+        <!-- Mixins -->
+        <a-mixin id="nav-icon"
+                 material="color: purple;"
+                 geometry="primitive: box; height: 0.3; width: 0.3; depth: 0.30;"
+                 rotation="-30 0 45"
+                 sound="src: media/prince-ui1.mp3; on: mouseenter;">
+
+        </a-mixin>
+
+        <!-- Templates -->
+        <script id="wall-intro" type="text/x-nunjucks-template">
+            {% for x in range(0,1) %}
+                <a-entity position="{{ -1 * ( widthspace * (num/2) ) }} 0 0">
+                    {% for y in range(1,num) %}
+                        <a-entity id="wall-{{ y + x }}" position="0 0 0">
+                            <a-entity
+                                    geometry="primitive: plane; height: 20; width: {{ widthspace }};"
+                                    position="{{ y * widthspace }} 0 0"
+                                    material="color: #E8E4E1; opacity: 1">
+
+                                    <!-- a-animation attribute="geometry.width" begin="{{ 215 * y }}" to="0"></a-animation -->
+                                    <a-animation id="wall-anim-{{ y }}" attribute="geometry.width" begin="wall-init-{{ y }}" to="0"></a-animation>
+                            </a-entity>
+                        </a-entity>
+                    {% endfor %}
+                </a-entity>
+            {% endfor %}
+        </script>
+
+
+        <script id="diamond-space" type="text/x-nunjucks-template">
+            {% for x in range(1,41) %}
+                <a-entity id="diamond-{{ x }}"
+                          collada-model="#diamond"
+                          material="opacity: 0.0;"
+                          rotation="360 0 0"
+                          visible="false">
+                </a-entity>
+            {% endfor %}
+        </script>
+    </a-assets>
+
+    <a-entity id="scene-onboarding">
+        <!-- Onboarding Wall -->
+        <a-entity id="wall-entire-1"
+                  template="src: #wall-intro"
+                  data-num="5"
+                  data-widthspace="3"
+                  position="0 0 -2.8"
+                  look-at="[camera]">
+        </a-entity>
+
+
+        <!-- Title Sign -->
+        <a-entity>
+            <a-entity id="prince-title"
+                      geometry="primitive: plane; height: 0.5; width: 1.8"
+                      material="src: #prince-title; transparent: true; opacity: 1"
+                      position="0 0 -3.8"
+                      rotation="-10 -15 0"
+                      look-at="wall-entire-1">
+                <a-animation id="prince-title-anim-1"
+                             attribute="geometry.height"
+                             begin="prince-title-remove"
+                             to="0">
+                </a-animation>
+            </a-entity>
+        </a-entity>
+
+        <!-- Quote 1: Born Alive -->
+        <a-entity id="quote-sign-1"
+                  geometry="primitive: plane; height: 0.26; width: 1.1"
+                  material="src: #quote-1; transparent: false; opacity: 0.5"
+                  position="0 0.15 -1.2"
+                  rotation="-15 0 0">
+            <a-animation attribute="material.opacity"
+                         begin="quote-sign-init-1"
+                         to="0.0">
+            </a-animation>
+
+            <!-- HACK / Minimize Height and Width -->
+            <a-animation id="quote-sign-height"
+                         attribute="geometry.height"
+                         begin="quote-sign-init-2"
+                         to="0">
+            </a-animation>
+            <a-animation id="quote-sign-width"
+                         attribute="geometry.width"
+                         begin="quote-sign-init-2"
+                         to="0">
+            </a-animation>
+
+        </a-entity>
+
+
+        <!-- Instruct: Look Here -->
+        <a-entity
+                id="instruct-1"
+                geometry="primitive: plane; height: 0.15; width: 0.8"
+                material="src: #instruct-lookhere; transparent: false; opacity: 0.0"
+                position="0 -0.4 -2.7"
+                rotation="-15 0 0">
+            <a-animation attribute="material.opacity"
+                         begin="5000" to="0.5">
+            </a-animation>
+
+            <!-- HACK / Minimize Height and Width -->
+            <a-animation id="instruct-1-height"
+                         attribute="geometry.height"
+                         begin="instruct-1-init-1"
+                         to="0">
+            </a-animation>
+            <a-animation id="instruct-1-width"
+                         attribute="geometry.width"
+                         begin="instruct-1-init-1"
+                         to="0">
+            </a-animation>
+        </a-entity>
+
+        <a-entity id="cue-1"
+                  mixin="nav-icon"
+                  position="0 -20 -2.7">
+
+            <!-- Fade in -->
+            <a-animation attribute="position"
+                         id="cue-1-init-1"
+                         begin="100"
+                         dur="5000"
+                         easing="ease-out"
+                         to="0 -0.8 -2.7">
+            </a-animation>
+
+            <!-- Loop -->
+            <a-animation attribute="scale"
+                         dur="5000"
+                         direction="reverse"
+                         easing="ease-out-cubic"
+                         fill="backwards"
+                         from="0.8 0.8 0.8"
+                         to="1.2 1.2 1.2"
+                         repeat="indefinite">
+            </a-animation>
+
+            <!-- Remove -->
+            <a-animation id="cue-1-anim-2"
+                         attribute="visible"
+                         begin="cue-1-remove"
+                         to="false">
+            </a-animation>
+        </a-entity>
+
+    </a-entity>
+
+    <a-entity id="scene-1">
+        <a-entity id="background" position="0 0 -40">
+            <a-entity id="diamond-space-bg" template="src: #diamond-space" height="0;">
+                <a-animation id="diamond-bg-anim-1"
+                             attribute="material.opacity"
+                             begin="diamond-bg-init-1"
+                             to="1.0">
+                </a-animation>
+
+                <a-animation id="diamond-visible"
+                             attribute="visible"
+                             begin="diamond-bg-init-2"
+                             to="true">
+                </a-animation>
+            </a-entity>
+        </a-entity>
+
+    </a-entity>
+
+    <!-- =================
+
+        Camera
+
+    ================== -->
+
+    <a-entity id="camera-viewer" position="0 0 0">
+        <a-entity camera look-controls wasd-controls="acceleration: 60;">
+            <a-cursor material="color: #FFBF11;">
+                    <a-animation begin="hovered"
+                                 easing="ease-in"
+                                 attribute="scale"
+                                 fill="backwards"
+                                 from="0.1 0.1 0.1"
+                                 to="1 1 1">
+                    </a-animation>
+                    <a-animation begin="fusing"
+                                 easing="ease-out"
+                                 attribute="scale"
+                                 fill="forwards"
+                                 from="1 1 1"
+                                 to="0.1 0.1 0.1">
+                    </a-animation>
+            </a-cursor>
+        </a-entity>
+
+        <!-- Animation Group 1 -->
+        <a-animation id="camera-viewer-anim-1"
+                     attribute="position"
+                     begin="camera-viewer-init-1"
+                     to="0 0 -20"
+                     dur="6500"
+                     easing="ease-in">
+        </a-animation>
+        <a-animation id="camera-viewer-anim-2"
+                     attribute="rotation"
+                     begin="camera-viewer-init-2"
+                     to="45 0 0"
+                     dur="5800"
+                     easing="ease-out">
+        </a-animation>
+
+        <!-- Animation Group 2 // Reset -->
+        <a-animation id="camera-viewer-anim-3"
+                     attribute="position"
+                     begin="camera-viewer-init-3"
+                     to="0 0 0"
+                     dur="600"
+                     easing="ease-in">
+        </a-animation>
+        <a-animation id="camera-viewer-anim-4"
+                     attribute="rotation"
+                     begin="camera-viewer-init-4"
+                     to="0 0 0"
+                     dur="600"
+                     easing="ease-out">
+        </a-animation>
+    </a-entity>
+
+
+    <!-- =================
+
+        Lights
+
+    ================== -->
+
+    <a-entity light="type: point; intensity: 2; distance: 0; decay: 0" color="#FFEBB5" position="0 1 -10"></a-entity>
+
+    <!-- Hemisphere Lights -->
+    <a-entity id="hem-white-light-1" light="type: hemisphere; color: #fff; groundColor: #fff; intensity: 1.0">
+        <a-animation id="hem-white-light-anim-1"
+                     attribute="light.intensity"
+                     easing="ease-out"
+                     to="0.0"
+                     dur="4000"
+                     begin="hem-white-light-init-1">
+        </a-animation>
+    </a-entity>
+    <a-entity id="hem-white-light-2" light="type: hemisphere; color: #34002F; groundColor: #E06FB2; intensity: 0">
+        <a-animation id="hem-white-light-anim-2"
+                     attribute="light.intensity"
+                     easing="ease-out"
+                     to="1.5"
+                     dur="3000"
+                     begin="hem-white-light-init-2">
+        </a-animation>
+    </a-entity>
+
+    <!-- Scene 1 Lights -->
+    <a-entity id="spot-pink-light-1" light="type: point; color: purple; intensity: 0" position="0 0 0">
+        <a-animation id="spot-pink-light-anim-1"
+                     attribute="light.intensity"
+                     easing="ease-out"
+                     to="12.5"
+                     dur="3000"
+                     begin="spot-pink-light-init-1">
+        </a-animation>
+    </a-entity>
+
+    <!-- color="#210226" -->
+    <a-sky id="sky-1" color="#330D47"></a-sky>
+
+
+</a-scene>
+
+<script type="text/javascript" src="js/script-onboarding.js"></script>
+
+</body>
+</html>

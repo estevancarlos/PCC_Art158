@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Events — A-Frame">
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
+</head>
+<body>
+
+<a-scene>
+    <a-assets>
+        <!-- Templates go inside of the assets and have an id name -->
+        <script id="template-a" type="text/x-nunjucks-template">
+            // Your template code goes here. Refer to my other examples
+        </script>
+    </a-assets>
+
+    <!-- You use that id name within the template attribute as shown below.
+    Don't forget to include src:# before the id name -->
+    <a-entity template="src: #template-a" position="0 0 0"></a-entity>
+</a-scene>
+
+
+</body>
+</html>

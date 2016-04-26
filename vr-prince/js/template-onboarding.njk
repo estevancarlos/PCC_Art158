@@ -1,0 +1,7 @@
+{% for x in range(0,5) %}
+    <a-entity
+        geometry="primitive: plane; height: 2; width: 2;"
+        position="{{ x * - 2 }} 0 0"
+        material="color: red; side: double">
+    </a-entity>
+{% endfor %}
